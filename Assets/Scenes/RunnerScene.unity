@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 257691824}
   - component: {fileID: 257691823}
   - component: {fileID: 257691827}
+  - component: {fileID: 257691828}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -461,6 +462,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &257691828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257691822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018c05791bab2884c9f19737a2afab4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Ovni
 --- !u!1 &279884276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,50 +1143,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &811326036
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 811326038}
-  - component: {fileID: 811326037}
-  m_Layer: 0
-  m_Name: Menu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &811326037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811326036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1878e073c2208746b10552aee61984f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &811326038
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811326036}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 532.1214, y: 428.5077, z: -32.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4edce82d10e9bf40a1936572654861c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 6
+  jumpForce: 7
 --- !u!54 &1018040025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1529,6 +1499,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 257691822}
   firePoint: {fileID: 1799420548}
   bulletForce: 20
+  bulletLifetime: 2
 --- !u!1 &1105942186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,5 +2465,4 @@ SceneRoots:
   - {fileID: 1568783181}
   - {fileID: 544024731}
   - {fileID: 2047786964}
-  - {fileID: 811326038}
   - {fileID: 257691826}

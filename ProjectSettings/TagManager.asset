@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Limit
   - Bullet
+  - Ovni
   layers:
   - Default
   - TransparentFX

@@ -1,23 +1,9 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Ovni : MonoBehaviour
 {
-    public string targetTag = "Ovni"; // Tag del objeto que la bala puede eliminar
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision detected: " + collision.gameObject.name);
-
         // Verificar si la colisión es con una bala
         if (collision.gameObject.CompareTag("Bullet"))
         {

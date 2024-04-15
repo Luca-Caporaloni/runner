@@ -91,12 +91,6 @@ public class Controller_Player : MonoBehaviour
             Controller_Hud.gameOver = true;
         }
 
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(this.gameObject);
-            Controller_Hud.gameOver = true;
-        }
-
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = true;
