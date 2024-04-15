@@ -6,6 +6,7 @@ public class Controller_Player : MonoBehaviour
     public float jumpForce = 10;
     private float initialSize;
     private int i = 0;
+    private int jumpsRemaining = 2; // Variable para llevar un seguimiento de los saltos restantes
     private bool floored;
 
     private void Start()
@@ -29,10 +30,17 @@ public class Controller_Player : MonoBehaviour
     {
         if (floored)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0) // Comprobar si hay saltos restantes
             {
                 rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+                jumpsRemaining--; // Reducir los saltos restantes después de saltar
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining == 1) // Permitir el doble salto cuando hay un salto restante
+        {
+            rb.velocity = Vector3.zero; // Reiniciar la velocidad para un mejor control del doble salto
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            jumpsRemaining--; // Reducir los saltos restantes después de saltar
         }
     }
 
@@ -52,7 +60,7 @@ public class Controller_Player : MonoBehaviour
             {
                 if (rb.transform.localScale.y != initialSize)
                 {
-                    rb.transform.localScale = new Vector3(rb.transform.localScale.x, initialSize, rb.transform.localScale.z);
+                    rb.transform.localScale = new Vector3(rb.transform.localScale.x, initialSize, rb.transform.localScale.z);         
                     i = 0;
                 }
             }
@@ -61,9 +69,12 @@ public class Controller_Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                rb.AddForce(new Vector3(0, -jumpForce, 0), ForceMode.Impulse);
+                float fastFallForce = 20f; // Velocidad aumentada del impulso hacia abajo
+
+                rb.AddForce(new Vector3(0, -fastFallForce, 0), ForceMode.Impulse);
             }
         }
+        
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -74,9 +85,22 @@ public class Controller_Player : MonoBehaviour
             Controller_Hud.gameOver = true;
         }
 
+        if (collision.gameObject.CompareTag("Ovni"))
+        {
+            Destroy(this.gameObject);
+            Controller_Hud.gameOver = true;
+        }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(this.gameObject);
+            Controller_Hud.gameOver = true;
+        }
+
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = true;
+            jumpsRemaining = 2; // Restaurar los saltos restantes cuando toca el suelo
         }
     }
 

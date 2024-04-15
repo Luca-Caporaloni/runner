@@ -18,7 +18,7 @@ public class Controller_Enemy : MonoBehaviour
 
     public void OutOfBounds()
     {
-        if (this.transform.position.x <= -15)
+        if (this.transform.position.x <= -20)
         {
             Destroy(this.gameObject);
         }

@@ -32,7 +32,7 @@ public class Controller_Instantiator : MonoBehaviour
         if (respawningTimer <= 0)
         {
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], instantiatePos.transform);
-            respawningTimer = UnityEngine.Random.Range(2, 6);
+            respawningTimer = UnityEngine.Random.Range(2, 4);
         }
     }
 }
