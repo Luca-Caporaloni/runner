@@ -10,7 +10,7 @@ public class Controller_Instantiator : MonoBehaviour
 
     void Start()
     {
-        Controller_Enemy.enemyVelocity = 2;
+        Controller_Enemy.enemyVelocity = 0.5f;
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class Controller_Instantiator : MonoBehaviour
     private void ChangeVelocity()
     {
         time += Time.deltaTime;
-        Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 15f, time / 45f);
+        Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 4f, time / 100f);
     }
 
     private void SpawnEnemies()

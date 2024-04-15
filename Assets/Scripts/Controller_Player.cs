@@ -29,7 +29,7 @@ public class Controller_Player : MonoBehaviour
     {
         if (floored)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             }
@@ -40,7 +40,7 @@ public class Controller_Player : MonoBehaviour
     {
         if (floored)
         {
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 if (i == 0)
                 {
@@ -59,7 +59,7 @@ public class Controller_Player : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 rb.AddForce(new Vector3(0, -jumpForce, 0), ForceMode.Impulse);
             }

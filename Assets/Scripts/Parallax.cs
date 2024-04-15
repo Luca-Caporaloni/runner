@@ -6,6 +6,7 @@ public class Parallax : MonoBehaviour
     private float length, startPos;
     public float parallaxEffect;
 
+
     void Start()
     {
         startPos = transform.position.x;
