@@ -9,6 +9,7 @@ TagManager:
   - Limit
   - Bullet
   - Ovni
+  - Enemigo
   layers:
   - Default
   - TransparentFX

@@ -1,17 +1,16 @@
 using UnityEngine;
 
-public class Ovni : MonoBehaviour
+public class Enemigo : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
         // Verificar si la colisión es con una bala
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Player"))
         {
             // Destruir la bala
             Destroy(other.gameObject);
-
-            // Destruir el OVNI
-            Destroy(gameObject);
+            Controller_Hud.gameOver = true;
         }
     }
 }
+

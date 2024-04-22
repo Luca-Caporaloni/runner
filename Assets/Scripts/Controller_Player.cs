@@ -8,6 +8,8 @@ public class Controller_Player : MonoBehaviour
     private int i = 0;
     private int jumpsRemaining = 2; // Variable para llevar un seguimiento de los saltos restantes
     private bool floored;
+    private bool invincible = false; // Variable para rastrear si el jugador es invencible
+    private float invincibilityDuration = 6f; // Duración de la invencibilidad en segundos
 
     private void Start()
     {
@@ -85,6 +87,12 @@ public class Controller_Player : MonoBehaviour
             Controller_Hud.gameOver = true;
         }
 
+        if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            Destroy(this.gameObject);
+            Controller_Hud.gameOver = true;
+        }
+
         if (collision.gameObject.CompareTag("Ovni"))
         {
             Destroy(this.gameObject);
@@ -98,6 +106,21 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
+    // Método para activar la invencibilidad del jugador
+    public void ActivateInvincibility(float duration)
+    {
+        if (!invincible)
+        {
+            invincible = true; // Establecer el jugador como invencible
+            Invoke("DeactivateInvincibility", invincibilityDuration); // Desactivar la invencibilidad después de la duración especificada
+        }
+    }
+
+    // Método para desactivar la invencibilidad del jugador
+    private void DeactivateInvincibility()
+    {
+        invincible = false; // Restablecer el jugador como no invencible
+    }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor"))

@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1846642249092789984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4977651945109575296}
+  - component: {fileID: 6795627829478381278}
+  m_Layer: 0
+  m_Name: Meteteoritos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4977651945109575296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846642249092789984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.491, z: 0}
+  m_LocalScale: {x: 0.40373775, y: 0.55663115, z: -1384.9512}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4641428172921375906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6795627829478381278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846642249092789984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a773809c3281d44d825a36245b1bd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meteorites:
+  - {fileID: 4641428172921375839, guid: a177d8642e90bb64ba8f66d30c6a6a99, type: 3}
+  spawnInterval: 4
+  spawnOffset: {x: 0, y: 10, z: 0}
+  minMeteoriteSpeed: 3
+  maxMeteoriteSpeed: 4
 --- !u!1 &2231231789866800628
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +171,7 @@ GameObject:
   - component: {fileID: 4641428172921375838}
   - component: {fileID: 36439973760694888}
   m_Layer: 0
-  m_Name: Enemy4
+  m_Name: Ovnis
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +190,7 @@ Transform:
   m_LocalScale: {x: 2.4768553, y: 1.7965224, z: -0.00072204723}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4977651945109575296}
   - {fileID: 6637652935139908354}
   - {fileID: 7330328765521023321}
   m_Father: {fileID: 0}
@@ -240,7 +291,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4641428172921375838
 MonoBehaviour:
