@@ -1065,7 +1065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &664855109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,10 +1579,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042119ad6c6d13f4cbae6d011fa3b726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerup:
+  powerUps:
   - {fileID: 2073109130}
-  instantiatePos: {fileID: 1095588620}
-  respawningTimer: 0
+  spawnInterval: 10
+  spawnRadius: 5
+  powerUpSpeed: 2
 --- !u!4 &1095588622
 Transform:
   m_ObjectHideFlags: 0
